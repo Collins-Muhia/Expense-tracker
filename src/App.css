@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: rgb(255, 255, 255);
+  background-image: url('../public/blob.svg'), url('../public/blob\ \(1\).svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, top right;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+
+
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  margin-left: -1230px;
+  width: 250px; /* adjust the width according to your logo size */
+  height: 250px; /* adjust the height according to your logo size */
+  background-image: url('../src/components/budget_buddy.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1; /* set the z-index to -1 to place the logo behind the content */
+}
+
+
+
+
+.container {
+  background-color: #ffffff;
+  margin: 30px auto;
+  margin-left: 100px;
+  width: 650px;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px 5px rgba(139, 139, 139, 0.5);
+  
+}
+
+
+
+
+
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h2 {
+  letter-spacing: 4px;
+  text-decoration: underline;
+  font-family:monospace;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+
+.btn {
+  cursor: pointer;
+  background-color: #006d05;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  border-radius: 20px;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn1 {
+  cursor: pointer;
+  background-color: #ad0000;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  border-radius: 20px;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #dd1600;
+  border: 0;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 13px;
+  line-height: 10px;
+  padding: 12px 3px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
