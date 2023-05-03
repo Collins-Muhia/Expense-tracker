@@ -37,6 +37,12 @@ export const AddTransaction = () => {
     setExpenseAmount('');
   }
 
+  // Disable the "Add Income" button if input fields are empty
+  const isIncomeButtonDisabled = incomeText === '' || incomeAmount === '';
+
+  // Disable the "Add Expense" button if input fields are empty
+  const isExpenseButtonDisabled = expenseText === '' || expenseAmount === '';
+
   return (
     <>
       <h3>Add New Income</h3>
@@ -49,7 +55,7 @@ export const AddTransaction = () => {
           <label htmlFor="incomeAmount">Amount</label>
           <input type="number" value={incomeAmount} onChange={(e) => setIncomeAmount(e.target.value)} placeholder="Enter amount..." />
         </div>
-        <button className="btn">Add Income</button>
+        <button className="btn" disabled={isIncomeButtonDisabled}>Add Income</button>
       </form>
 
       <h3>Add New Expense</h3>
@@ -62,7 +68,7 @@ export const AddTransaction = () => {
           <label htmlFor="expenseAmount">Amount</label>
           <input type="number" value={expenseAmount} onChange={(e) => setExpenseAmount(e.target.value)} placeholder="Enter amount..." />
         </div>
-        <button className="btn1">Add Expense</button>
+        <button className="btn1" disabled={isExpenseButtonDisabled}>Add Expense</button>
       </form>
     </>
   )
